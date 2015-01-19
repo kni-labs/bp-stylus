@@ -1,7 +1,6 @@
 /* Make JShint stop yelling: DO NOT REMOVE */
 /* jshint undef:false, unused:false, strict:false */
 
-
 //
 // Plugins
 //
@@ -20,7 +19,6 @@ var
   nib     = require('nib'),
   jeet    = require('jeet'),
   rupture = require('rupture');
-
 
 //
 // Sources
