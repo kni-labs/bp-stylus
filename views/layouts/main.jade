@@ -13,7 +13,7 @@ html
     //- favicon
     link(rel='icon', type='image/png', href='favicon.png')
     link(rel='apple-touch-icon', href='apple-touch-icon.png')
-    link(rel='stylesheet', href='public/css/site.css')
+    link(rel='stylesheet', href='css/site.css')
 
     title #{pageTitle} 
 
@@ -34,7 +34,8 @@ html
     <meta name="twitter:image:src" content="http://madebycardinal.com/images/lifta-preview.jpg"/>
       
 
-    //- script(src='js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')
+    script(src='js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
   
   body(class='#{bodyClass}')
 
@@ -54,7 +55,7 @@ html
     script.
       window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\\/script>')
 
-    script(src='public/js/vendor.js')
-    script(src='public/js/main.js')
+    script(src='js/vendor.js')
+    script(src='js/main.js')
 
     block scripts

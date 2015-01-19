@@ -55,52 +55,8 @@ var destinations = {
 };
 
 //
-// Copy asset files
-//
-gulp.task('assets', function() {
-
-  // Move the favicon - TODO: Possibly move static/root type files with this
-  // gulp.src(sources.favicon)
-  //   .pipe(gulp.dest(destinations.root));
-
-  // // Move the images
-  // gulp.src(sources.images)
-  //   .pipe(gulp.dest(destinations.images));
-
-  // // Move the videos
-  // gulp.src(sources.videos)
-  //   .pipe(gulp.dest(destinations.videos));
-
-  // // Move the fonts
-  // gulp.src(sources.fonts)
-  //   .pipe(gulp.dest(destinations.fonts));
-
-});
-
-//
 // Stylus task
 //
-// gulp.task('stylus', function() {
-//   return gulp.src('stylus/site.styl')
-//     .pipe(plumber({
-//       errorHandler: notify.onError({
-//         sound: 'Purr',
-//         title: "Stylus Error:",
-//         message:  "<%= error.message %>"})
-//     }))
-//     .pipe(stylus({
-//       use: [nib(), jeet(), rupture()],
-//       sourcemap: {
-//         inline: true,
-//         basePath: 'public/css'
-//       },
-//       compress: true,
-//       linenos: false
-//     }))
-//     .pipe(gulp.dest(destinations.styles))
-//     .pipe(refresh());
-// });
-
 gulp.task('stylus', function () {
   gulp.src('./stylus/site.styl')
   .pipe(plumber({
@@ -173,6 +129,7 @@ gulp.task('jade', function() {
 // Watch tasks
 //
 gulp.task('watch', ['build'], function() {
+  refresh.listen();
   gulp.watch(sources.stylus, ['stylus']);
   gulp.watch(sources.styluschild, ['stylus']);
   gulp.watch(sources.jade, ['jade']);
@@ -190,4 +147,4 @@ gulp.task('default', ['build'], function () {
 //
 // Assets Only
 //
-gulp.task('build', ['assets', 'stylus', 'scripts', 'vendorjs']);
+gulp.task('build', ['stylus', 'scripts', 'vendorjs']);
