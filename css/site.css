@@ -16,17 +16,17 @@ section .center {
 .circle {
   border-radius: 50%;
 }
-nav ul {
+nav[role='navigation'] ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
   overflow: hidden;
 }
-nav ul > li {
+nav[role='navigation'] ul > li {
   display: block;
   float: left;
 }
-nav ul > li:last-child {
+nav[role='navigation'] ul > li:last-child {
   margin-right: 0px;
 }
 .black {

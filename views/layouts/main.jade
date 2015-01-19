@@ -38,11 +38,17 @@ html
   
   body(class='#{bodyClass}')
 
-    include ../partials/header
+    //- Header
+    block header
+      include ../partials/header
 
-    block content
+    //- Site Content
+    .main(role='main')
+      block content
 
-    include ../partials/footer
+    //- Footer      
+    block footer
+      include ../partials/footer
 
     script(src='http://code.jquery.com/jquery-1.11.0.min.js')     
     script.
