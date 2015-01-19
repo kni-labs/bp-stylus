@@ -13,7 +13,7 @@ html
     //- favicon
     link(rel='icon', type='image/png', href='favicon.png')
     link(rel='apple-touch-icon', href='apple-touch-icon.png')
-    link(rel='stylesheet', href='css/site.css')
+    link(rel='stylesheet', href='public/css/site.css')
 
     title #{pageTitle} 
 
@@ -48,8 +48,7 @@ html
     script.
       window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\\/script>')
 
-    script(src='js/main.js')
-    script(src='js/events.js')
-    script(src='js/vendor/helper.js')
+    script(src='public/js/vendor.js')
+    script(src='public/js/main.js')
 
     block scripts
