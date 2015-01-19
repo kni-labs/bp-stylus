@@ -60,20 +60,20 @@ var destinations = {
 gulp.task('assets', function() {
 
   // Move the favicon - TODO: Possibly move static/root type files with this
-  gulp.src(sources.favicon)
-    .pipe(gulp.dest(destinations.root));
+  // gulp.src(sources.favicon)
+  //   .pipe(gulp.dest(destinations.root));
 
-  // Move the images
-  gulp.src(sources.images)
-    .pipe(gulp.dest(destinations.images));
+  // // Move the images
+  // gulp.src(sources.images)
+  //   .pipe(gulp.dest(destinations.images));
 
-  // Move the videos
-  gulp.src(sources.videos)
-    .pipe(gulp.dest(destinations.videos));
+  // // Move the videos
+  // gulp.src(sources.videos)
+  //   .pipe(gulp.dest(destinations.videos));
 
-  // Move the fonts
-  gulp.src(sources.fonts)
-    .pipe(gulp.dest(destinations.fonts));
+  // // Move the fonts
+  // gulp.src(sources.fonts)
+  //   .pipe(gulp.dest(destinations.fonts));
 
 });
 
@@ -150,12 +150,20 @@ gulp.task('vendorjs', function() {
 //
 // Jade task
 //
+
+// gulp.task('jade', function() {
+//   return gulp.src(sources.jade)
+//     .pipe(jade({
+//       jade: jade,
+//       pretty: true
+//     }))
+//     .pipe(gulp.dest('public/'))
+//     .pipe(refresh());
+// });
+
 gulp.task('jade', function() {
-  return gulp.src(sources.jade)
-    .pipe(gulpJade({
-      jade: jade,
-      pretty: true
-    }))
+  gulp.src('views/pages/*')
+    .pipe(jade({}))
     .pipe(gulp.dest('public/'))
     .pipe(refresh());
 });
