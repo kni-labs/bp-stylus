@@ -1,0 +1,41 @@
+// Typography
+
+body
+  font-family "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+// Headings
+// –––––––––––––––––––––––––––––––––––––––––––
+h1, h2, h3, h4, h5, h6
+  display block
+  margin 1rem 0
+  font-weight normal
+
+  // Remove the margin-top on all :first-child headers
+  // as the padding on the parent *almost* always makes up for it
+  &:first-child
+    margin-top 0
+
+  // Standardize margin-bottom on headers
+  margin-bottom 1rem
+
+  // links need to inherit the heading color
+  a
+    color inherit
+    
+// Default heading styles
+h1
+  font-size rem(64px)
+  line-height 1.1em  
+h2
+  font-size rem(48px)
+  line-height 1.2em  
+h3
+  font-size rem(36px)
+  line-height 1.3em    
+h4
+  font-size rem(28px)
+h5
+  font-size rem(22px)
+h6
+  font-size rem(18px)
+

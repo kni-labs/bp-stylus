@@ -1,0 +1,152 @@
+// Variables
+// ––––––––––––––––––––––––––––––––––––––––––––––––
+$base-font-size         = 16px
+$global-border-radius   = 4px
+
+
+//
+// REM Calculator
+//
+// Calculates and returns the REM value based on PX input
+//
+// uses     : rem(30px) or rem(30)
+// returns  : 1.875rem
+//
+// ––––––––––––––––––––––––––––––––––––––––––––––––
+
+rem(value) {
+  type = unit(value)
+  if type == px {
+    return unit(value / $base-font-size, 'rem')
+  } else {
+    return unit(value, type)
+  }
+}
+
+//
+// Font-size replacement
+//
+// Uses REM with PX fallback for older browsers
+//
+// uses: 'font-size 18px'
+//       'font-size 1.3rem'
+//
+// ––––––––––––––––––––––––––––––––––––––––––––––––
+
+font-size(size) {
+  type = unit(size)
+  if type == 'px' {
+    font-size: size
+    font-size: rem(size)
+  }
+  if type == 'rem' {
+    font-size: (size * $base-font-size)
+    font-size: size
+  }
+  if type == 'em' {
+    font-size: size
+  }
+  if type == 'inherit' {
+    font-size: inherit
+  }
+  if type == 'auto' {
+    font-size: inherit
+  }
+}
+
+navigation-list()
+  list-style-type: none
+  padding: 0
+  margin: 0
+  overflow: hidden
+  > li
+    display: block
+    float: left
+    &:last-child
+      margin-right: 0px
+      
+
+
+// Mimic responsive img scaling for background images
+//
+// ––––––––––––––––––––––––––––––––––––––––––––––––
+
+inherent-height($aspect-ratio)
+  position relative;
+  padding-bottom $aspect-ratio
+  height 0 
+  
+  &:before
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+
+
+// Vertically align elements of unkown parent height
+//
+// ––––––––––––––––––––––––––––––––––––––––––––––––
+
+vertical-center()
+  position relative
+  top 50%
+  transform translateY(-50%)
+
+vertical-center-reset()
+  position relative
+  top auto
+  transform: translateY(0)
+
+// need to cleanup
+
+sibling-count()
+  li:first-child:nth-last-child(1)
+    width: 100%
+    cf()
+    
+  li:first-child:nth-last-child(2),
+  li:first-child:nth-last-child(2) ~ li
+    span(1/2)
+    
+  li:first-child:nth-last-child(3),    
+  li:first-child:nth-last-child(3) ~ li
+     span(1/3)
+     
+  li:first-child:nth-last-child(4),   
+  li:first-child:nth-last-child(4) ~ li
+    span(1/4)
+    
+  li:first-child:nth-last-child(5),
+  li:first-child:nth-last-child(5) ~ li
+    span(1/5) 
+    
+  li:first-child:nth-last-child(6),
+  li:first-child:nth-last-child(6) ~ li
+    span(1/6)
+    
+  li:first-child:nth-last-child(7),
+  li:first-child:nth-last-child(7) ~ li
+    span(1/7)
+
+// reset it 
+sibling-count-off()
+  li:first-child:nth-last-child(1),
+  li:first-child:nth-last-child(2),
+  li:first-child:nth-last-child(2) ~ li,
+  li:first-child:nth-last-child(3),    
+  li:first-child:nth-last-child(3) ~ li,
+  li:first-child:nth-last-child(4),   
+  li:first-child:nth-last-child(4) ~ li,
+  li:first-child:nth-last-child(5),   
+  li:first-child:nth-last-child(5) ~ li,    
+  li:first-child:nth-last-child(6),   
+  li:first-child:nth-last-child(6) ~ li, 
+  li:first-child:nth-last-child(7),   
+  li:first-child:nth-last-child(7) ~ li, 
+  li:first-child:nth-last-child(8),   
+  li:first-child:nth-last-child(8) ~ li
+    width 100%
+
+
+

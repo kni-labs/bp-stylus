@@ -1,0 +1,37 @@
+//
+// Animations – defaults and variables
+// –––––––––––––––––––––––––––––––––––––––––––
+$duration = 0.3s
+$easing   = ease-in-out
+
+.animated
+  animation-duration .5s
+  animation-fill-mode both
+
+
+@keyframes overscale {
+  0% {
+    transform(scale(0));
+  }
+
+  70% {
+    transform(scale(1.1));
+  }
+
+  100% {
+    transform(scale(1));
+  }
+}
+
+.over-scale
+  animation-name overscale
+  animation-duration .6s
+  animation-delay .3s
+  animation-timing-function $easing
+
+
+.delay-1
+  animation-delay .25s
+
+.delay-2
+  animation-delay .5s

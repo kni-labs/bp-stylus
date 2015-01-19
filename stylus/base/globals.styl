@@ -1,0 +1,47 @@
+//
+// Global styles and fun stuff
+// –––––––––––––––––––––––––––––––––––––––––––
+
+
+// Variables
+$maxSiteWidth = 1140px
+$desktopWidth = 940px
+$tabletWidth  = 720px
+$mobileWidth  = 100%
+
+
+// Repsonive scale, reference: http://jenius.github.io/rupture/
+scale           = 0px 768px 992px 1200px
+mobile-cutoff   = 768px
+tablet-cutoff   = 992px
+desktop-cutoff  = 1200px
+
+
+//
+// Global layout
+// –––––––––––––––––––––
+
+*
+  box-sizing border-box
+  
+body, html
+  margin 0 
+  padding 0 
+  
+section
+  padding rem(70px) 0
+  
+  .center
+    padding 0 5%
+    
+    //repsonsive styles here
+
+//
+// Utility classes
+// –––––––––––––––––––––
+.circle
+  border-radius 50%
+
+nav
+  ul
+    navigation-list()

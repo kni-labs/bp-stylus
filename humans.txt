@@ -1,0 +1,29 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+Frontend Development: KNI™
+Team: @dbox, @seagoat, @_chad_campbell
+Site: http://www.kurtnoble.com
+Twitter: @therealkni
+Location: San Francisco, Seattle, Nashville
+
+/* THANKS */
+
+
+/* SITE */
+Standards: HTML5, CSS3
+Components: Stylus, Nib, Jeet, Rupture
+Software: SublimeText, Atom, CodeKit
+
+      ___           ___
+     /__/|         /__/\        ___
+    |  |:|         \  \:\      /  /\
+    |  |:|          \  \:\    /  /:/
+  __|  |:|      _____\__\:\  /__/::\
+ /__/\_|:|____ /__/::::::::\ \__\/\:\__
+ \  \:\/:::::/ \  \:\~~\~~\/    \  \:\/\
+  \  \::/~~~~   \  \:\  ~~~      \__\::/
+   \  \:\        \  \:\          /__/:/
+    \  \:\        \  \:\         \__\/
+     \__\/         \__\/
