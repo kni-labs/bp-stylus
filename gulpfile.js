@@ -37,7 +37,7 @@ var sources = {
 // Destinations
 //
 var destinations = {
-  root        : 'public/',
+  root        : '',
   images      : 'public/img/',
   videos      : 'public/video',
   styles      : 'public/css/',
@@ -80,7 +80,7 @@ gulp.task('assets', function() {
 // Stylus task
 //
 gulp.task('stylus', function() {
-  return gulp.src('build/stylus/site.styl')
+  return gulp.src('stylus/site.styl')
     .pipe(plumber({
       errorHandler: notify.onError({
         sound: 'Purr',
@@ -92,7 +92,7 @@ gulp.task('stylus', function() {
       sourcemap: {
         inline: true,
         sourceRoot: '.',
-        basePath: 'public/stylesheets'
+        basePath: 'public/css'
       },
       compress: true,
       linenos: false
