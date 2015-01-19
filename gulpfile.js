@@ -132,7 +132,8 @@ gulp.task('scripts', function() {
     .pipe(concat('main.js'))
     .pipe(gulp.dest(destinations.javascripts))
     .pipe(uglify())
-    .pipe(gulp.dest(destinations.javascripts));
+    .pipe(gulp.dest(destinations.javascripts))
+    .pipe(refresh());
 });
 
 gulp.task('vendorjs', function() {
