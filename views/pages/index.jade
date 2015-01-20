@@ -1,9 +1,24 @@
 extends ../layouts/main
 
 block vars
-  - var pageTitle   ='Change me, or be embarrassed.'
-  - var description ='This is the description of this page.'
-  - var bodyClass   ='home'
+  - var pageTitle           ='Default Page Title'
+  - var description         ='This is the description of this page.'
+  - var bodyClass           ='home'
+
+  //- Facebook Meta
+  - var ogTitle             ='Default Page Title' 
+  - var ogType              ='website'  
+  - var ogurl               ='http://google.com'     
+  - var ogImg               ='http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg' 
+  - var ogDescription       ='This is the description of this page.'      
+
+  //- Twitter Cards
+  - var twitterCard         ='summary_large_image' 
+  - var twitterSite         ='@therealkni' 
+  - var twitterCreator      ='@dbox' 
+  - var twitterTitle        ='Default Page Title' 
+  - var twitterDescription  ='This is the description of this page.' 
+  - var twitterImgSrc       ='http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg' 
 
 block content
 
