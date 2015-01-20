@@ -1,24 +1,40 @@
 extends ../layouts/main
 
 block vars
-  - var pageTitle   ='Change me, or be embarrassed.'
-  - var description ='This is the description of this page.'
-  - var bodyClass   ='home'
+  - var pageTitle           ='Default Page Title'
+  - var description         ='This is the description of this page.'
+  - var bodyClass           ='home'
+
+  //- Facebook Meta
+  - var ogTitle             ='Default Page Title' 
+  - var ogType              ='website'  
+  - var ogurl               ='http://google.com'     
+  - var ogImg               ='http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg' 
+  - var ogDescription       ='This is the description of this page.'      
+
+  //- Twitter Cards
+  - var twitterCard         ='summary_large_image' 
+  - var twitterSite         ='@therealkni' 
+  - var twitterCreator      ='@dbox' 
+  - var twitterTitle        ='Default Page Title' 
+  - var twitterDescription  ='This is the description of this page.' 
+  - var twitterImgSrc       ='http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg' 
 
 block content
 
-  //- Custom content here. Delete everything below to begin.
+  //- Custom content here. Delete everything up to block scripts.
 
   section#headers
     div.center
       hgroup
-        h1 Boilerplate v2
+        h1 Boilerplate v2 
         h2 Several fabulous dixieland jazz groups played with quick tempo.
         h3 Back in my quaint garden, jaunty zinnias vie with flaunting phlox. 
         h4 I quickly explained that many big jobs involve few hazards. 
         h5 Jay Wolf is quite an expert on the bass violin, guitar, dulcimer, ukulele and zither. 
-        h6 Expect skilled signwriters to use many jazzy, quaint old alphabets effectively. 
-
+        h6 Expect skilled signwriters to use many jazzy, quaint old alphabets effectively.
+      p Suspendisse vestibulum turpis a semper laoreet. Duis vitae tristique erat. Quisque eget dui a risus fringilla consectetur nec eu ex. Suspendisse consequat dui vel leo tristique, ac dapibus tortor dictum. Fusce dignissim feugiat erat sit amet tincidunt. Nunc iaculis diam elit, vitae luctus libero semper ut. Suspendisse consequat elit at tristique placerat. Nulla dignissim sit amet turpis sit amet tincidunt. Aliquam quis tortor nec massa lacinia bibendum ut eleifend odio. Aliquam sit amet volutpat tellus, at scelerisque est. Nulla facilisi. Aliquam ornare nisi quis quam dignissim porttitor. Mauris quis porttitor tellus. Vestibulum scelerisque massa eros, vulputate dapibus justo semper sed. Vestibulum ullamcorper egestas nisi, nec ultricies arcu.
+      a.btn(href="http://kurtnoble.com") A KNI Joint
 block scripts
 
   //- any page specific scripts go here

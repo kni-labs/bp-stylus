@@ -1,7 +1,27 @@
+//
 // Typography
+// –––––––––––––––––––––––––––––––––––––––––––
 
-body
-  font-family "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$main-font = "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+.defaultType
+  font-family $main-font
+  font-weight normal
+  font-style normal
+  -webkit-font-smoothing antialiased
+
+
+body, p, a, h1, h2, h3, h4, h5, h6,
+small, em, strong, input, button
+  @extends .defaultType
+
+
+// Letterspacing
+// –––––––––––––––––––––––––––––––––––––––––––
+$tight-spacing = -.045em
+$snug-spacing = -.02em
+$more-spacing = .1em
+
 
 // Headings
 // –––––––––––––––––––––––––––––––––––––––––––
@@ -22,6 +42,7 @@ h1, h2, h3, h4, h5, h6
   a
     color inherit
     
+    
 // Default heading styles
 h1
   font-size rem(64px)
@@ -38,4 +59,9 @@ h5
   font-size rem(22px)
 h6
   font-size rem(18px)
+  
+// Default Type styles
+p 
+  font-size(16px)
+  line-height 1.5em
 

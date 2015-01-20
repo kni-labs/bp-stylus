@@ -11,30 +11,29 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
     
     //- favicon
-    link(rel='icon', type='image/png', href='favicon.png')
+    link(rel='icon', type='image/ico', href='favicon.ico')
     link(rel='apple-touch-icon', href='apple-touch-icon.png')
     link(rel='stylesheet', href='css/site.css')
 
     title #{pageTitle} 
 
     //- OG tags
-    meta(property='og:title', content='#{pageTitle}')
-    meta(property='og:type', content='website')
-    meta(property='og:url', content='http://kurtnoble.com/labs/rrssb/index.html')
-    meta(property='og:image', content='http://kurtnoble.com/labs/rrssb/facebook-share.jpg')
-    meta(property='og:description', content='#{description}')
-
+    meta(property='og:title', content='#{ogTitle}')
+    meta(property='og:type', content='#{ogType}')
+    meta(property='og:url', content='#{ogUrl}')
+    meta(property='og:image', content='#{ogImg}')
+    meta(property='og:description', content='#{ogDescription}')
 
     <!-- twitter card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@madebycardinal">        
-    <meta name="twitter:creator" content="@madebycardinal">
-    <meta name="twitter:title" content="#{pageTitle}">
-    <meta name="twitter:description" content="#{description}"/>       
-    <meta name="twitter:image:src" content="http://madebycardinal.com/images/lifta-preview.jpg"/>
-      
+    meta(name='twitter:card', content='#{twitterCard}')
+    meta(name='twitter:site', content='#{twitterSite}')
+    meta(name='twitter:creator', content='#{twitterCreator}')
+    meta(name='twitter:title', content='#{twitterTitle}')
+    meta(name='twitter:description', content='#{twitterDescription}') 
+    meta(name='twitter:image:src', content='#{twitterImgSrc}')
 
-    //- script(src='js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')
+    script(src='js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
   
   body(class='#{bodyClass}')
 
@@ -54,8 +53,7 @@ html
     script.
       window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\\/script>')
 
+    script(src='js/vendor.js')
     script(src='js/main.js')
-    script(src='js/events.js')
-    script(src='js/vendor/helper.js')
 
     block scripts

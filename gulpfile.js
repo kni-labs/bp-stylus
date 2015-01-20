@@ -11,8 +11,10 @@ var
   notify  = require('gulp-notify'),
   watch   = require('gulp-watch'),
   stylus  = require('gulp-stylus'),
+  sourcemaps = require('gulp-sourcemaps');
   jade    = require('gulp-jade'),
   uglify  = require('gulp-uglify'),
+  concat = require('gulp-concat'),
   jshint  = require('gulp-jshint'),
   stylish = require('jshint-stylish'),
   refresh = require('gulp-livereload'),
@@ -29,7 +31,13 @@ var sources = {
   videos      : 'video/**/*',
   stylus      : 'stylus/**/*',
   fonts       : 'fonts/**/*',
-  javascripts : 'js/**/*',
+  javascripts : 'js/*.js',
+  vendorjs    : [
+    'js/vendor/jquery.waypoints.js',
+    'js/vendor/jquery.ba-hashchange.js',
+    'js/vendor/headroom.js', 
+    'js/vendor/jQuery.headroom.js'
+  ],
   jade        : 'views/**/*'
 };
 
@@ -37,7 +45,7 @@ var sources = {
 // Destinations
 //
 var destinations = {
-  root        : 'public/',
+  root        : '',
   images      : 'public/img/',
   videos      : 'public/video',
   styles      : 'public/css/',
@@ -46,57 +54,23 @@ var destinations = {
 };
 
 //
-// Copy asset files
-//
-gulp.task('assets', function() {
-
-  // Move the favicon - TODO: Possibly move static/root type files with this
-  gulp.src(sources.favicon)
-    .pipe(gulp.dest(destinations.root));
-
-  // Move the images
-  gulp.src(sources.images)
-    .pipe(gulp.dest(destinations.images));
-
-  // Move the videos
-  gulp.src(sources.videos)
-    .pipe(gulp.dest(destinations.videos));
-
-  // Move the fonts
-  gulp.src(sources.fonts)
-    .pipe(gulp.dest(destinations.fonts));
-
-  // Move the scripts
-  gulp.src(sources.javascripts[0])
-    .pipe(gulp.dest(destinations.javascripts));
-
-  // Move the legacy script
-  gulp.src(sources.javascripts[1])
-    .pipe(gulp.dest(destinations.javascripts));
-
-});
-
-//
 // Stylus task
 //
-gulp.task('stylus', function() {
-  return gulp.src('build/stylus/site.styl')
-    .pipe(plumber({
-      errorHandler: notify.onError({
+gulp.task('stylus', function () {
+  gulp.src('./stylus/site.styl')
+  .pipe(plumber({
+    errorHandler: notify.onError({
         sound: 'Purr',
         title: "Stylus Error:",
         message:  "<%= error.message %>"})
     }))
+    .pipe(sourcemaps.init())
     .pipe(stylus({
       use: [nib(), jeet(), rupture()],
-      sourcemap: {
-        inline: true,
-        sourceRoot: '.',
-        basePath: 'public/stylesheets'
-      },
       compress: true,
       linenos: false
     }))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(destinations.styles))
     .pipe(refresh());
 });
@@ -110,6 +84,21 @@ gulp.task('scripts', function() {
       .on('error', gutil.beep))
     .pipe(jshint.reporter(stylish))
     .pipe(plumber())
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest(destinations.javascripts))
+    .pipe(uglify())
+    .pipe(gulp.dest(destinations.javascripts))
+    .pipe(refresh());
+});
+
+gulp.task('vendorjs', function() {
+  return gulp.src(sources.vendorjs)
+    .pipe(jshint()
+      .on('error', gutil.beep))
+    .pipe(jshint.reporter(stylish))
+    .pipe(plumber())
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest(destinations.javascripts))
     .pipe(uglify())
     .pipe(gulp.dest(destinations.javascripts));
 });
@@ -117,8 +106,11 @@ gulp.task('scripts', function() {
 //
 // Jade task
 //
+
 gulp.task('jade', function() {
-  return gulp.src(sources.jade)
+  gulp.src('views/pages/*')
+    .pipe(jade({}))
+    .pipe(gulp.dest('public/'))
     .pipe(refresh());
 });
 
@@ -126,10 +118,12 @@ gulp.task('jade', function() {
 // Watch tasks
 //
 gulp.task('watch', ['build'], function() {
+  refresh.listen();
   gulp.watch(sources.stylus, ['stylus']);
   gulp.watch(sources.styluschild, ['stylus']);
   gulp.watch(sources.jade, ['jade']);
   gulp.watch(sources.javascripts, ['scripts']);
+  gulp.watch(sources.vendorjs, ['vendorjs']);
 });
 
 //
@@ -142,4 +136,4 @@ gulp.task('default', ['build'], function () {
 //
 // Assets Only
 //
-gulp.task('build', ['assets', 'stylus', 'scripts']);
+gulp.task('build', ['stylus', 'scripts', 'vendorjs']);

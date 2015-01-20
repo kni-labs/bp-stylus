@@ -3,7 +3,7 @@
 
 
 Frontend Development: KNI™
-Team: @dbox, @seagoat, @_chad_campbell
+Team: @dbox, @joshuatuscan, @_chad_campbell
 Site: http://www.kurtnoble.com
 Twitter: @therealkni
 Location: San Francisco, Seattle, Nashville
@@ -13,8 +13,8 @@ Location: San Francisco, Seattle, Nashville
 
 /* SITE */
 Standards: HTML5, CSS3
-Components: Stylus, Nib, Jeet, Rupture
-Software: SublimeText, Atom, CodeKit
+Components: Gulp, Stylus, Nib, Jeet, Rupture
+Software: SublimeText, Atom
 
       ___           ___
      /__/|         /__/\        ___
