@@ -33,7 +33,6 @@ var sources = {
   fonts       : 'fonts/**/*',
   javascripts : 'js/*.js',
   vendorjs    : [
-    'js/vendor/jquery-1.11.2.js',
     'js/vendor/jquery.waypoints.js',
     'js/vendor/jquery.ba-hashchange.js',
     'js/vendor/headroom.js', 
