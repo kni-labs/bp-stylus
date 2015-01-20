@@ -107,16 +107,6 @@ gulp.task('vendorjs', function() {
 // Jade task
 //
 
-// gulp.task('jade', function() {
-//   return gulp.src(sources.jade)
-//     .pipe(jade({
-//       jade: jade,
-//       pretty: true
-//     }))
-//     .pipe(gulp.dest('public/'))
-//     .pipe(refresh());
-// });
-
 gulp.task('jade', function() {
   gulp.src('views/pages/*')
     .pipe(jade({}))

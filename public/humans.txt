@@ -3,7 +3,7 @@
 
 
 Frontend Development: KNI™
-Team: @dbox, @seagoat, @_chad_campbell
+Team: @dbox, @joshuatuscan, @_chad_campbell
 Site: http://www.kurtnoble.com
 Twitter: @therealkni
 Location: San Francisco, Seattle, Nashville
