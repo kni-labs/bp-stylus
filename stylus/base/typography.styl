@@ -2,8 +2,26 @@
 // Typography
 // –––––––––––––––––––––––––––––––––––––––––––
 
-body
-  font-family "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$main-font = "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+.defaultType
+  font-family $main-font
+  font-weight normal
+  font-style normal
+  -webkit-font-smoothing antialiased
+
+
+body, p, a, h1, h2, h3, h4, h5, h6,
+small, em, strong, input, button
+  @extends .defaultType
+
+
+// Letterspacing
+// –––––––––––––––––––––––––––––––––––––––––––
+$tight-spacing = -.045em
+$snug-spacing = -.02em
+$more-spacing = .1em
+
 
 // Headings
 // –––––––––––––––––––––––––––––––––––––––––––
