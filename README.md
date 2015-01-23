@@ -35,12 +35,12 @@ Assuming this worked, you now have NodeJS installed. While the boilerplate isn't
   1. Clone this repository
   2. Run: `npm install`
 
-# Usage
+## Usage
 
 Run: `gulp watch`
 
 This will compile all of the necessary images, CSS, and Javascript, run watch tasks to compile the aforementioned files when edited, and spin up a live-reload server.
 
-# Browser Support
+## Browser Support
 
 IE 9 + the good ones
