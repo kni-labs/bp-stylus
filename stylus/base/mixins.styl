@@ -54,25 +54,16 @@ font-size(size) {
   }
 }
 
-navigation-list()
-  list-style-type: none
-  padding: 0
-  margin: 0
-  overflow: hidden
-  > li
-    display: block
-    float: left
-    &:last-child
-      margin-right: 0px
-      
 
 
 // Mimic responsive img scaling for background images
 //
+// example: http://codepen.io/dbox/pen/JoWQqW
+//
 // ––––––––––––––––––––––––––––––––––––––––––––––––
 
 inherent-height($aspect-ratio)
-  position relative;
+  position relative
   padding-bottom $aspect-ratio
   height 0 
   
@@ -86,6 +77,8 @@ inherent-height($aspect-ratio)
 
 // Vertically align elements of unkown parent height
 //
+// example: http://codepen.io/dbox/pen/VYWPbe
+//
 // ––––––––––––––––––––––––––––––––––––––––––––––––
 
 vertical-center()
@@ -96,10 +89,32 @@ vertical-center()
 vertical-center-reset()
   position relative
   top auto
-  transform: translateY(0)
+  transform translateY(0)
+  
+
+  
+// Reset ul and li rules for navigation lists
+//
+// example: http://codepen.io/dbox/pen/JoJEXQ
+//
+// ––––––––––––––––––––––––––––––––––––––––––––––––
+
+navigation-list()
+  list-style-type none
+  padding 0
+  margin 0
+  overflow hidden
+  > li
+    display block
+    float left
+    &:last-child
+      margin-right 0
+
 
 
 // Determine item width based on sibling count
+//
+// example (doesn't use Jeet): http://codepen.io/dbox/pen/JoJEXQ
 //
 // ––––––––––––––––––––––––––––––––––––––––––––––––
 
