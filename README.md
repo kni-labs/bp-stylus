@@ -32,7 +32,7 @@ Assuming this worked, you now have NodeJS installed. While the boilerplate isn't
 
 ## Installation Instructions
 
-  1. Clone this repository
+  1. Clone this repository: `git clone git@bitbucket.org:kni/kni-bp-ck.git [your folder]`
   2. Run: `npm install`
 
 ## Usage
