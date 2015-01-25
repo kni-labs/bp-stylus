@@ -5,22 +5,22 @@
 // Plugins
 //
 var
-  gulp    = require('gulp'),
-  plumber = require('gulp-plumber'),
-  gutil   = require('gulp-util'),
-  notify  = require('gulp-notify'),
-  watch   = require('gulp-watch'),
-  stylus  = require('gulp-stylus'),
+  gulp       = require('gulp'),
+  plumber    = require('gulp-plumber'),
+  gutil      = require('gulp-util'),
+  notify     = require('gulp-notify'),
+  watch      = require('gulp-watch'),
+  stylus     = require('gulp-stylus'),
   sourcemaps = require('gulp-sourcemaps');
-  jade    = require('gulp-jade'),
-  uglify  = require('gulp-uglify'),
-  concat = require('gulp-concat'),
-  jshint  = require('gulp-jshint'),
-  stylish = require('jshint-stylish'),
-  refresh = require('gulp-livereload'),
-  nib     = require('nib'),
-  jeet    = require('jeet'),
-  rupture = require('rupture');
+  jade       = require('gulp-jade'),
+  uglify     = require('gulp-uglify'),
+  concat     = require('gulp-concat'),
+  jshint     = require('gulp-jshint'),
+  stylish    = require('jshint-stylish'),
+  refresh    = require('gulp-livereload'),
+  nib        = require('nib'),
+  jeet       = require('jeet'),
+  rupture    = require('rupture');
 
 //
 // Sources
@@ -35,7 +35,7 @@ var sources = {
   vendorjs    : [
     'js/vendor/jquery.waypoints.js',
     'js/vendor/jquery.ba-hashchange.js',
-    'js/vendor/headroom.js', 
+    'js/vendor/headroom.js',
     'js/vendor/jQuery.headroom.js'
   ],
   jade        : 'views/**/*'
