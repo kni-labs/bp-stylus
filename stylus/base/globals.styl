@@ -25,16 +25,28 @@ desktop-cutoff  = 1200px
   box-sizing border-box
 
 body, html
-  margin 0 
-  padding 0 
+  margin 0
+  padding 0
 
-// This should be the main responsive template  
+// Main responsive template styles here
 section
   padding rem(70px) 0
-  
-  .center
-    padding 0 5%
 
+.center
+  position relative
+  clear both
+  margin 0 auto
+  width 100%
+
+  +below(3)
+    width $desktopWidth
+
+  +below(2)
+    width $tabletWidth
+
+  +below(1)
+    width 90%
+    margin 0 5%
 
 //
 // Utility classes
