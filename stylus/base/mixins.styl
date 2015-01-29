@@ -66,8 +66,8 @@ font-size(size) {
 inherent-height($aspect-ratio)
   position relative
   padding-bottom $aspect-ratio
-  height 0 
-  
+  height 0
+
   &:before
     position absolute
     top 0
@@ -91,9 +91,9 @@ vertical-center-reset()
   position relative
   top auto
   transform translateY(0)
-  
 
-  
+
+
 // Reset ul and li rules for navigation lists
 //
 // example: http://codepen.io/dbox/pen/JoJEXQ
@@ -124,49 +124,67 @@ sibling-count()
   li:first-child:nth-last-child(1)
     width: 100%
     cf()
-    
+
   li:first-child:nth-last-child(2),
   li:first-child:nth-last-child(2) ~ li
     span(1/2)
-    
-  li:first-child:nth-last-child(3),    
+
+  li:first-child:nth-last-child(3),
   li:first-child:nth-last-child(3) ~ li
      span(1/3)
-     
-  li:first-child:nth-last-child(4),   
+
+  li:first-child:nth-last-child(4),
   li:first-child:nth-last-child(4) ~ li
     span(1/4)
-    
+
   li:first-child:nth-last-child(5),
   li:first-child:nth-last-child(5) ~ li
-    span(1/5) 
-    
+    span(1/5)
+
   li:first-child:nth-last-child(6),
   li:first-child:nth-last-child(6) ~ li
     span(1/6)
-    
+
   li:first-child:nth-last-child(7),
   li:first-child:nth-last-child(7) ~ li
     span(1/7)
 
-// reset it 
+// reset it
 sibling-count-off()
   li:first-child:nth-last-child(1),
   li:first-child:nth-last-child(2),
   li:first-child:nth-last-child(2) ~ li,
-  li:first-child:nth-last-child(3),    
+  li:first-child:nth-last-child(3),
   li:first-child:nth-last-child(3) ~ li,
-  li:first-child:nth-last-child(4),   
+  li:first-child:nth-last-child(4),
   li:first-child:nth-last-child(4) ~ li,
-  li:first-child:nth-last-child(5),   
-  li:first-child:nth-last-child(5) ~ li,    
-  li:first-child:nth-last-child(6),   
-  li:first-child:nth-last-child(6) ~ li, 
-  li:first-child:nth-last-child(7),   
-  li:first-child:nth-last-child(7) ~ li, 
-  li:first-child:nth-last-child(8),   
+  li:first-child:nth-last-child(5),
+  li:first-child:nth-last-child(5) ~ li,
+  li:first-child:nth-last-child(6),
+  li:first-child:nth-last-child(6) ~ li,
+  li:first-child:nth-last-child(7),
+  li:first-child:nth-last-child(7) ~ li,
+  li:first-child:nth-last-child(8),
   li:first-child:nth-last-child(8) ~ li
     width 100%
 
 
-
+//
+// Dev Mode
+//
+// Temporarily adds borders to the children, 
+// grandchildren, etc of an element during
+// development.
+//
+// ––––––––––––––––––––––––––––––––––––––––––––
+dev-mode()
+  > *
+    border 1px solid green
+  > * > *
+    border 1px solid tomato
+  > * > * > *
+    border 1px solid DeepSkyBlue
+  > * > * > * > *
+    border 1px solid DeepPink
+  > * > * > * > * > *
+    border 1px solid MediumSlateBlue
