@@ -1,4 +1,4 @@
-###KNI Boilerplate###
+# KNI Boilerplate
 ---
 For jump-starting new HTML projects.
 
@@ -32,7 +32,7 @@ Assuming this worked, you now have NodeJS installed. While the boilerplate isn't
 
 ## Installation Instructions
 
-  1. Clone this repository: `git clone https://kni@bitbucket.org/kni/kni-bp-ck.git [your folder]`
+  1. Clone this repository
   2. Run: `npm install`
 
 ## Usage
