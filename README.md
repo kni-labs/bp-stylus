@@ -6,7 +6,7 @@ For jump-starting new HTML projects.
 
   * **[Gulp](http://gulpjs.com)** – Gulp is our task runner of choice, and is responsible for all minification, concatination, and watch tasks for dev.
   * **[Stylus](http://learnboost.github.io/stylus/)** – Stylus provides extremely fast, expressive, powerful, and robust pre-processing for our CSS.
-  * **[Nib](http://tj.github.io/nib/)** – Nib is a powerful library for the Stylus CSS language that provides robust cross-browser CSS3 mixins.
+  * **[Axis](http://axis.netlify.com)** – Axis is a sizeable css utility library built on top of stylus and and [nib](http://visionmedia.github.io/nib/).
   * **[Jeet](http://jeet.gs/)** – For creating super flexible, easy to read grids
   * **[Rupture](http://jenius.github.io/rupture/)** – Stylus media query utility for gorgeous breakpoints
 
