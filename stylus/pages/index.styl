@@ -1,10 +1,24 @@
 
+
+
+
 // This is all demo. Delete everything below when starting
 
 body.home
   background #efefef
   color #333
 
-  a, button
+  +below(2)
+    border 5px solid green
+
+  ul
+    inline-list()
+    li
+      col(1/4)
+      transition all .5s ease
+      hover-color black
+
+
+  a.btn, button
     margin-right rem(10px)
     button-base(darkturquoise , turquoise , white, white)
