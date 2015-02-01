@@ -18,7 +18,7 @@ var
   jshint     = require('gulp-jshint'),
   stylish    = require('jshint-stylish'),
   refresh    = require('gulp-livereload'),
-  nib        = require('nib'),
+  axis       = require('axis'),
   jeet       = require('jeet'),
   rupture    = require('rupture');
 
@@ -66,7 +66,7 @@ gulp.task('stylus', function () {
     }))
     .pipe(sourcemaps.init())
     .pipe(stylus({
-      use: [nib(), jeet(), rupture()],
+      use: [axis(), jeet(), rupture()],
       compress: true,
       linenos: false
     }))
