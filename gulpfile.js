@@ -11,7 +11,7 @@ var
   notify     = require('gulp-notify'),
   watch      = require('gulp-watch'),
   stylus     = require('gulp-stylus'),
-  sourcemaps = require('gulp-sourcemaps');
+  sourcemaps = require('gulp-sourcemaps'),
   jade       = require('gulp-jade'),
   uglify     = require('gulp-uglify'),
   concat     = require('gulp-concat'),
